@@ -1,0 +1,9 @@
+** frontend with react and javascript **
+1) npm create vite@latest .
+2) npm run dev
+
+
+** mongodb username and password for chat application
+username = kirangoje1
+password = KOPIOx2q1AyZCVJb
+mongodb+srv://kirangoje1:KOPIOx2q1AyZCVJb@cluster0.1r4s6.mongodb.net/
