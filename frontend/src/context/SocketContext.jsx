@@ -19,7 +19,7 @@ export const SocketContextProvider = ({ children }) => {
     useEffect(() => {
         // Initialize socket connection if authUser exists
         if (authUser) {
-            console.log("authUser in socketContext-> ", authUser);
+            // console.log("authUser in socketContext-> ", authUser);
             const socketInstance = io("https://chat-app-1-ulyf.onrender.com/", {
                 query: {
                     userId: authUser.user._id, // Pass user ID to socket server

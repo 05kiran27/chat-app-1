@@ -33,7 +33,7 @@ exports.signup = async (req,res) => {
             userName,
             password,
             gender,
-            profilePic: gender ==='male' ? boyProfilePic : girlProfilePic
+            profilePic: gender ==='Male' ? boyProfilePic : girlProfilePic
         })
 
         if(user){

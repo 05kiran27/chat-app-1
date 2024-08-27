@@ -8,8 +8,8 @@ const useSignup = () => {
 
     const signup = async ({ firstName, lastName, userName, password, confirmPassword, gender }) => {
         const success = handleInputErrors({ firstName, lastName, userName, password, confirmPassword, gender });
-        console.log('password => ' , password);
-        console.log('confirm password => ', confirmPassword);
+        // console.log('password => ' , password);
+        // console.log('confirm password => ', confirmPassword);
 
         if (!success) {
         return;
@@ -17,7 +17,7 @@ const useSignup = () => {
 
         setLoading(true); // Start loading before making API call
         try {
-        console.log('trying to go to backend');
+        // console.log('trying to go to backend');
         const res = await fetch('https://chat-app-1-ulyf.onrender.com/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,7 @@ const useSignup = () => {
 
         const data = await res.json();
 
-        console.log("data from useSignup hook => ", data);
+        // console.log("data from useSignup hook => ", data);
 
         if(data.error){
           throw new Error(data.error)
@@ -42,7 +42,7 @@ const useSignup = () => {
         // context
         setAuthUser(data);
 
-        console.log('data => ', data);
+        // console.log('data => ', data);
 
         if (res.ok) {
             toast.success('Signup successful!');

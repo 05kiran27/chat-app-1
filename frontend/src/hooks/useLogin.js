@@ -26,8 +26,8 @@ const useLogin = () => {
 
       // Ensure the token is present in the response
       if (!data.token) {
-        console.log("if not token printing data -> ", data)
-        throw new Error('No token received');
+        // console.log("if not token printing data -> ", data)
+        throw new Error('No token received in useLogin hook');
       }
 
       // Store user data and token in localStorage

@@ -15,8 +15,8 @@ const Message = ({ message }) => {
 
   const senderId = message.senderId;
   const fromMe = senderId === authUser.user._id;
-  console.log('sender id => ', senderId);
-  console.log('authUserId',authUser.user._id)
+  // console.log('sender id => ', senderId);
+  // console.log('authUserId',authUser.user._id)
   const chatClassName = fromMe ? 'chat-end' : 'chat-start'; // Align based on sender
 
   // Ensure profilePic exists, or use a default image

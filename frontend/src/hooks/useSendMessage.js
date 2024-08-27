@@ -11,7 +11,7 @@ const useSendMessage = () => {
         setLoading(true);
         try {
             const token = localStorage.getItem('chat-token');
-            if (!token) throw new Error('Token not found');
+            if (!token) throw new Error('Token not found in useSendMessage hook');
 
             const res = await fetch(`https://chat-app-1-ulyf.onrender.com/api/message/send/${selectedConversation._id}`, {
                 method: "POST",
@@ -22,7 +22,7 @@ const useSendMessage = () => {
                 body: JSON.stringify({ message })
             });
 
-            console.log("response from backend after sending message => ", res);
+            // console.log("response from backend after sending message => ", res);
 
             const data = await res.json();
             if (!res.ok) {

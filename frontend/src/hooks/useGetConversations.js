@@ -11,7 +11,7 @@ const useGetConversations = () => {
       try {
         // Retrieve the token from localStorage
         const token = localStorage.getItem('chat-token');
-        console.log("printing token from useGetConversations hook ", token);
+        // console.log("printing token from useGetConversations hook ", token);
 
         // Ensure token exists
         if (!token) {
