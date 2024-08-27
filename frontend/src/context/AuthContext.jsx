@@ -7,11 +7,14 @@ export const useAuthContext = () => {
 };
 
 export const AuthContextProvider = ({ children }) => {
+    
     const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("chat-user")) || null);
 
     useEffect(() => {
         const handleStorageChange = () => {
+            console.log("controll in handleStorageChange in authContext ")
             const user = JSON.parse(localStorage.getItem("chat-user"));
+            console.log('user in authContext is -> ', user);
             setAuthUser(user);
         };
 

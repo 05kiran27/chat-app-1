@@ -26,7 +26,7 @@ const useSignup = () => {
 
         const data = await res.json();
 
-        // console.log("data from useSignup hook => ", data);
+        console.log("data from useSignup hook => ", data);
 
         if(data.error){
           throw new Error(data.error)
@@ -41,8 +41,9 @@ const useSignup = () => {
         localStorage.setItem("chat-user", JSON.stringify(data));
         // context
         setAuthUser(data);
+        localStorage.setItem('chat-token', data.token);
 
-        // console.log('data => ', data);
+        console.log('data in usesignup hook => ', data);
 
         if (res.ok) {
             toast.success('Signup successful!');

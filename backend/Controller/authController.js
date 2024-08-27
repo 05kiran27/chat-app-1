@@ -40,6 +40,7 @@ exports.signup = async (req,res) => {
             await user.save();
 
             const token = generateTokenAndSetCookie(user._id,res)
+            console.log("token while signup in authController => ", token);
 
 
             return res.status(200).json({
