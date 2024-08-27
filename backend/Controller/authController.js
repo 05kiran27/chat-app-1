@@ -65,17 +65,18 @@ exports.signup = async (req,res) => {
     
 }
 
+
 exports.login = async (req, res) => {
-    try{
-        const {userName, password} = req.body;
+    try {
+        const { userName, password } = req.body;
 
-        const user = await User.findOne({userName});
+        const user = await User.findOne({ userName });
 
-        if(!user){
+        if (!user) {
             return res.status(404).json({
-                success:false,
-                message:'user not found',
-            })
+                success: false,
+                message: 'User not found in userController',
+            });
         }
 
         originalPassword = user.password;
@@ -86,22 +87,28 @@ exports.login = async (req, res) => {
             })
         }
 
-        generateTokenAndSetCookie(user._id, res);
+        // Generate token and set cookie
+        const token = generateTokenAndSetCookie(user._id, res);
 
+        // Send response with user info and token
         return res.status(200).json({
-            success:true,
-            message:'login successfull',
+            success: true,
+            message: 'Login successful',
             user,
+            token  // Optional: include token in response for use in client
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            success: false,
+            message: "Could not login, error in login in authcontroller"
         });
     }
-    catch(error){
-        console.log(error);
-        return res.status(500).json({
-            success:false,
-            message:"could not login, error in login in authcontroller"
-        })
-    }
 }
+
+
+
+
 
 exports.logout = async (req,res) => {
     try{

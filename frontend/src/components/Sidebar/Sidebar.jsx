@@ -2,6 +2,7 @@ import React from 'react'
 import SearchInput from './SearchInput'
 import Conversation from './Conversation'
 import LogoutButton from './LogoutButton'
+import Conversations from './Conversations'
 
 const Sidebar = () => {
   return (
@@ -9,7 +10,7 @@ const Sidebar = () => {
         <SearchInput/>
         <div className='divider px-3 '></div>
 
-        <Conversation/>
+        <Conversations/>
         <LogoutButton/>
     </div>
   )
