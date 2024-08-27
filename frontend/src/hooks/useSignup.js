@@ -34,7 +34,7 @@ const useSignup = () => {
 
         if (!data.token) {
           console.log("if not token printing data -> ", data)
-          throw new Error('No token received');
+          throw new Error('No token received in useSignup hook');
         }
 
         // local storage

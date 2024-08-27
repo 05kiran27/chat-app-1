@@ -12,7 +12,7 @@ const useGetMessages = () => {
             try {
                 // You should retrieve the token here (e.g., from localStorage)
                 const token = localStorage.getItem('chat-token');
-                const res = await fetch(`https://chat-app-1-ulyf.onrender.com/api/message/${selectedConversation._id}`, {
+                const res = await fetch(`http://localhost:3000/api/message/${selectedConversation._id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

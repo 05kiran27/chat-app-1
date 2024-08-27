@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ['https://chat-app-1-ulyf.onrender.com/'], // Update this if your frontend is hosted elsewhere
+        origin: ['https://chat-app-1-ulyf.onrender.com'], // Update this if your frontend is hosted elsewhere
         methods: ["GET", "POST"]
     }
 });
