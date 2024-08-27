@@ -26,8 +26,15 @@ const useSignup = () => {
 
         const data = await res.json();
 
+        console.log("data from useSignup hook => ", data);
+
         if(data.error){
           throw new Error(data.error)
+        }
+
+        if (!data.token) {
+          console.log("if not token printing data -> ", data)
+          throw new Error('No token received');
         }
 
         // local storage

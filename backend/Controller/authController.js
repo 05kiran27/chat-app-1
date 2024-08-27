@@ -27,7 +27,7 @@ exports.signup = async (req,res) => {
         const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${firstName}`;
         const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${firstName}`;
 
-        const newUser = new User({
+        const user = new User({
             firstName,
             lastName,
             userName,
@@ -36,16 +36,16 @@ exports.signup = async (req,res) => {
             profilePic: gender ==='male' ? boyProfilePic : girlProfilePic
         })
 
-        if(newUser){
-            await newUser.save();
+        if(user){
+            await user.save();
 
-            const token = generateTokenAndSetCookie(newUser._id,res)
+            const token = generateTokenAndSetCookie(user._id,res)
 
 
             return res.status(200).json({
                 success:true,
                 message:`user created successfully`,
-                newUser,
+                user,
                 token,
             });
         }
