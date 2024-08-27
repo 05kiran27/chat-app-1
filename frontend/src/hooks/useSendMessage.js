@@ -13,7 +13,7 @@ const useSendMessage = () => {
             const token = localStorage.getItem('chat-token');
             if (!token) throw new Error('Token not found');
 
-            const res = await fetch(`https://chat-app-1-ulyf.onrender.com/message/send/${selectedConversation._id}`, {
+            const res = await fetch(`https://chat-app-1-ulyf.onrender.com/api/message/send/${selectedConversation._id}`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
