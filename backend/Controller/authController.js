@@ -39,13 +39,14 @@ exports.signup = async (req,res) => {
         if(newUser){
             await newUser.save();
 
-            generateTokenAndSetCookie(newUser._id,res)
+            const token = generateTokenAndSetCookie(newUser._id,res)
 
 
             return res.status(200).json({
                 success:true,
                 message:`user created successfully`,
                 newUser,
+                token,
             });
         }
 
