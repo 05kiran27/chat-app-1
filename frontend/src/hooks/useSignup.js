@@ -18,7 +18,7 @@ const useSignup = () => {
         setLoading(true); // Start loading before making API call
         try {
         console.log('trying to go to backend');
-        const res = await fetch(' http://localhost:5000/api/auth/signup', {
+        const res = await fetch('https://chat-app-1-ulyf.onrender.com/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ firstName, lastName, userName, password, confirmPassword, gender }), // confirmPassword is usually not sent to the backend

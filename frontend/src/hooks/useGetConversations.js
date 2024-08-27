@@ -18,7 +18,7 @@ const useGetConversations = () => {
           throw new Error('Token not found');
         }
 
-        const res = await fetch('http://localhost:5000/api/users', {
+        const res = await fetch('https://chat-app-1-ulyf.onrender.com/api/users', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

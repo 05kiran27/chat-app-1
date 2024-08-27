@@ -10,7 +10,7 @@ const useLogin = () => {
     setLoading(true);
     try {
       // Perform the login API request
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const res = await fetch('https://chat-app-1-ulyf.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userName, password }),
