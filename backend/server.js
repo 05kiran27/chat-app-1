@@ -20,10 +20,10 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     credentials: true,
+// }));
 
 app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute);
@@ -40,9 +40,3 @@ server.listen(PORT, () => {
     connectDb();
 });
 
-
-// cloudinaryConnect();
-
-app.get('/', (req,res) => {
-    res.send('This is Ramlal homepage');
-})
